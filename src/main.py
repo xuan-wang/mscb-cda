@@ -15,7 +15,7 @@ def main():
     Path("data/strategies").mkdir(parents=True, exist_ok=True)
 
     # Initialize the portfolio with monthly contribution settings
-    initial_amount = 1000
+    initial_amount = 30000
     monthly_contribution = 1000
     portfolio = Portfolio(initial_amount, monthly_contribution)
 
@@ -37,7 +37,7 @@ def main():
 
     # Load strategies and run backtesting
     strategy_files = list(Path("data/strategies").glob("*.csv"))
-    strategies = [f.stem for f in strategy_files]
+    strategies = [f.stem for f in strategy_files]  # 已经从文件名中获取策略名
 
     if not strategies:
         logger.warning("No strategy files found in data/strategies directory")

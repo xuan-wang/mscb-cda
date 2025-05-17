@@ -10,13 +10,13 @@ Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
 ## Performance Metrics
 
-### Final Portfolio Values
-"""
+### Strategy Performance Summary"""
     
     # Add metrics for each strategy
     for strategy in metrics:
         report += f"""
-#### Strategy: {strategy}
+
+### Strategy: {strategy}
 - Total Cash Contributions: ${metrics[strategy]['total_contributions']:,.2f}
 - Final Total Assets: ${metrics[strategy]['final_value']:,.2f}
 - Money-weighted Return: {metrics[strategy]['money_weighted_return']:.2%}

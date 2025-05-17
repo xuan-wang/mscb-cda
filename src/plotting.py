@@ -92,7 +92,7 @@ class PortfolioVisualizer:
             ax.plot(
                 asset_values.index, 
                 asset_values[strategy],
-                label=f'{strategy} Total Value'
+                label=f'Strategy: {strategy}'  # 修改标签显示
             )
         
         # Format y-axis to show thousands with K
@@ -115,8 +115,8 @@ class PortfolioVisualizer:
         for strategy in strategies:
             # Calculate cumulative returns
             cumulative_returns = (1 + returns[strategy]).cumprod() - 1
-            ax.plot(returns.index, cumulative_returns * 100,  # Convert to percentage
-                   label=f'{strategy} Return')
+            ax.plot(returns.index, cumulative_returns * 100,
+                   label=f'Strategy: {strategy}')  # 修改标签显示
         
         ax.set_title('Time-weighted Returns', 
                     fontsize=self.subtitle_fontsize,
